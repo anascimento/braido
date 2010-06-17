@@ -1,9 +1,11 @@
-package br.com.caelum.jdbc;
+package br.com.caelum.jdbc.teste;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class teste {
+import br.com.caelum.jdbc.ConnectionFactory;
+
+public class TestaConexao {
 
 	/**
 	 * @param args
