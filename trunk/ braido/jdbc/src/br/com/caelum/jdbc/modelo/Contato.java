@@ -3,16 +3,16 @@ package br.com.caelum.jdbc.modelo;
 import java.util.Calendar;
 
 public class Contato {
-	private int id;
+	private long id;
 	private String nome;
 	private String email;
 	private String endereco;
 	private Calendar dataNascimento;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNome() {

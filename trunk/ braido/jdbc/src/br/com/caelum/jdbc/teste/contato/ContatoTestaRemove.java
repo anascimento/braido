@@ -1,9 +1,9 @@
-package br.com.caelum.jdbc.teste;
+package br.com.caelum.jdbc.teste.contato;
 
 import br.com.caelum.jdbc.dao.ContatoDAO;
 import br.com.caelum.jdbc.modelo.Contato;
 
-public class TestaRemove {
+public class ContatoTestaRemove {
 
 	/**
 	 * @param args
