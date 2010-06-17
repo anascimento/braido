@@ -1,11 +1,11 @@
-package br.com.caelum.jdbc.teste;
+package br.com.caelum.jdbc.teste.contato;
 
 import java.util.Calendar;
 
 import br.com.caelum.jdbc.dao.ContatoDAO;
 import br.com.caelum.jdbc.modelo.Contato;
 
-public class TestaAltera {
+public class ContatoTestaAltera {
 
 	/**
 	 * @param args
@@ -13,8 +13,8 @@ public class TestaAltera {
 	public static void main(String[] args) {
 		//Setando os valores a serem salvos
 		Contato contato = new Contato();
-		contato.setId(1);
-		contato.setNome("Caelum Test");
+		contato.setId(2);
+		contato.setNome("Caelum 2");
 		contato.setEmail("contato@caelum.com.br");
 		contato.setEndereco("Rua Vergueiro 3185 cj57");
 		contato.setDataNascimento(Calendar.getInstance());

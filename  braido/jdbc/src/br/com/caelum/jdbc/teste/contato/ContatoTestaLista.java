@@ -1,4 +1,4 @@
-package br.com.caelum.jdbc.teste;
+package br.com.caelum.jdbc.teste.contato;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import br.com.caelum.jdbc.dao.ContatoDAO;
 import br.com.caelum.jdbc.modelo.Contato;
 
-public class TestaLista {
+public class ContatoTestaLista {
 
 	/**
 	 * @param args
