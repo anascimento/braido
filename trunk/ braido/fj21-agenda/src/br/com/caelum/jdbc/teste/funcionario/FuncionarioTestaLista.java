@@ -1,9 +1,9 @@
-package br.com.caelum.jdbc.teste.funcionario;
+package br.com.caelum.agenda.teste.funcionario;
 
 import java.util.List;
 
-import br.com.caelum.jdbc.dao.FuncionarioDAO;
-import br.com.caelum.jdbc.modelo.Funcionario;
+import br.com.caelum.agenda.dao.FuncionarioDAO;
+import br.com.caelum.agenda.modelo.Funcionario;
 
 public class FuncionarioTestaLista {
 
