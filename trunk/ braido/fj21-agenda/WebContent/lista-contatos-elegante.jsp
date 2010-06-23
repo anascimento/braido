@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://jakarta.apache.org/taglibs/display" prefix="display" %>
 
 <c:import url="cabecalho.jsp"/>
 <!--  Cria lista  -->
@@ -62,4 +63,16 @@
 			</tr>	
 		</c:forEach>
 	</table>
+	<br />
+	<!-- Utilizando o Displaytag -->
+	Utilizando o Displaytag
+	<%-- request.setAttribute( "lista", dao.getLista() ); --%>
+	<c:set var="lista" scope="session" value="${dao.lista}"/>
+	<display:table name="lista">		
+		<display:column property="nome" />
+	  	<display:column property="email" />
+	  	<display:column property="endereco" />
+	  	<display:column property="dataNascimento" title="Data Nascimento"/>
+	</display:table>
+
 <c:import url="rodape.jsp"/>
