@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://jakarta.apache.org/taglibs/display" prefix="display" %>
+<%@ taglib uri="http://jakarta.apache.org/taglibs/display" prefix="display2" %>
+<%@ taglib uri="http://displaytag.sf.net" prefix="display" %>
 
 <c:import url="cabecalho.jsp"/>
 <!--  Cria lista  -->
@@ -72,12 +73,20 @@
 	Utilizando o Displaytag
 	<%-- request.setAttribute( "lista", dao.getLista() ); --%>
 	<c:set var="lista" scope="session" value="${dao.lista}"/>
-	<display:table name="lista">		
+	<display2:table name="lista">		
+		<display2:column property="id" />
+		<display2:column property="nome" />
+	  	<display2:column property="email" />
+	  	<display2:column property="endereco" />
+	  	<display2:column property="dataNascimento" />
+	</display2:table>
+	<br/><h3>Teste 2</h3><br/>
+	<% request.setAttribute( "lista", dao.getLista() ); %>
+	<display:table name="lista" class="its">		
 		<display:column property="id" />
 		<display:column property="nome" />
 	  	<display:column property="email" />
 	  	<display:column property="endereco" />
-	  	<display:column property="dataNascimento" title="Data Nascimento"/>
+	  	<display:column property="dataNascimento" />
 	</display:table>
-
 <c:import url="rodape.jsp"/>
