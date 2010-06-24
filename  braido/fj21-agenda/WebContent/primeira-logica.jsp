@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Primeira Logica</h1>
+	<h1>Primeira Lógica</h1>
 </body>
 </html>

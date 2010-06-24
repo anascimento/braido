@@ -17,6 +17,7 @@ public class ContatoTestaLista {
 		List<Contato> contatos = dao.getLista();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MMMM/yyyy");
 		for(Contato contato : contatos){
+			System.out.println("Id: " + contato.getId());
 			System.out.println("Nome: " + contato.getNome());
 			System.out.println("Email: " + contato.getEmail());
 			System.out.println("Endereço: " + contato.getEndereco());
