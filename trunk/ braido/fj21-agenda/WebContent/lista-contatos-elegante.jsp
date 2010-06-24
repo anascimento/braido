@@ -9,6 +9,7 @@
 	<table border="1">
 		<!-- for -->
 		<tr>
+			<td>ID</td>
 			<td>Nome</td>
 			<td>Email</td>
 			<td>Endereço</td>
@@ -16,6 +17,7 @@
 		</tr>
 		<c:forEach var="contato" items="${dao.lista}">			
 			<tr>
+				<td>${contato.id}</td>
 				<td>${contato.nome}</td>
 				<td>
 					<c:if test="${not empty contato.email}">
@@ -38,6 +40,7 @@
 	<table border="1">
 		<!-- for -->
 		<tr>
+			<td>ID</td>
 			<td>Nome</td>
 			<td>Email</td>
 			<td>Endereço</td>
@@ -45,6 +48,7 @@
 		</tr>
 		<c:forEach var="contato" items="${dao.lista}">			
 			<tr>
+				<td>${contato.id}</td>
 				<td>${contato.nome}</td>
 				<td>
 					<c:choose>
@@ -69,6 +73,7 @@
 	<%-- request.setAttribute( "lista", dao.getLista() ); --%>
 	<c:set var="lista" scope="session" value="${dao.lista}"/>
 	<display:table name="lista">		
+		<display:column property="id" />
 		<display:column property="nome" />
 	  	<display:column property="email" />
 	  	<display:column property="endereco" />

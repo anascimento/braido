@@ -41,6 +41,7 @@ public class FuncionarioDAO {
 			while (rs.next()) {
 				// Criando o objeto de Contato
 				Funcionario funcionario = new Funcionario();
+				funcionario.setId(rs.getLong("id"));
 				funcionario.setNome(rs.getString("nome"));
 				funcionario.setUsuario(rs.getString("usuario"));
 				funcionario.setSenha(rs.getString("senha"));

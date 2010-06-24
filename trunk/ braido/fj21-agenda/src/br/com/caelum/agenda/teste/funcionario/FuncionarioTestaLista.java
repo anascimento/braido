@@ -14,6 +14,7 @@ public class FuncionarioTestaLista {
 		FuncionarioDAO dao = new FuncionarioDAO();
 		List<Funcionario> funcionarios = dao.getLista();
 		for (Funcionario funcionario : funcionarios) {
+			System.out.println("Id: " + funcionario.getId());
 			System.out.println("Nome: " + funcionario.getNome());
 			System.out.println("Email: " + funcionario.getUsuario());
 			System.out.println("Endereço: " + funcionario.getSenha() + "\n");
