@@ -5,9 +5,12 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import org.postgresql.jdbc2.optional.SimpleDataSource;
 
 import br.com.caelum.agenda.ConnectionFactory;
 import br.com.caelum.agenda.modelo.Contato;
@@ -92,5 +95,33 @@ public class ContatoDAO {
 		} catch (SQLException e) {
 			this.exception.getException(e);
 		}
+	}
+	
+	public Contato getEspecifico(String id){
+		Contato contato = new Contato();
+		try {
+			PreparedStatement stmt = this.connection
+					.prepareStatement("SELECT * FROM contatos WHERE id=?");
+			stmt.setLong(1, Long.parseLong(id));
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				// Criando o objeto de Contato
+				//Contato contato = new Contato();
+				contato.setId(rs.getLong("id"));
+				contato.setNome(rs.getString("nome"));
+				contato.setEmail(rs.getString("email"));
+				contato.setEndereco(rs.getString("endereco"));
+				
+				Calendar data = Calendar.getInstance();
+				data.setTime(rs.getDate("datanascimento"));
+				contato.setDataNascimento(data);				
+			}
+			rs.close();
+			stmt.close();
+		} catch (SQLException e) {
+			this.exception.getException(e);
+		}
+		return contato;
 	}
 }
