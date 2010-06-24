@@ -6,6 +6,7 @@
 <c:import url="cabecalho.jsp"/>
 <!--  Cria lista  -->
 <jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDAO"/>
+	<h3><a href="adiciona-contato.jsp">Adiciona Novo Contato</a></h3><br/>
 	Utilizando o IF do JSTL	
 	<table border="1">
 		<!-- for -->
@@ -15,6 +16,8 @@
 			<td>Email</td>
 			<td>Endereço</td>
 			<td>Data Nascimento</td>
+			<td>Altera Item</td>
+			<td>Remove Item</td>
 		</tr>
 		<c:forEach var="contato" items="${dao.lista}">			
 			<tr>
@@ -32,6 +35,8 @@
 				<!-- <td>${contato.dataNascimento.time}</td> -->
 				<!-- Formatando o dia com JSTL -->
 				<td><fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" /></td>
+				<td><a href="mvc?logica=AlteraContatoLogic&paramAltera=popula&id=${contato.id}">Altera</a>
+				<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}&nome=${contato.nome}">Remove</a>
 			</tr>	
 		</c:forEach>
 	</table>
@@ -46,6 +51,8 @@
 			<td>Email</td>
 			<td>Endereço</td>
 			<td>Data Nascimento</td>
+			<td>Altera Item</td>
+			<td>Remove Item</td>
 		</tr>
 		<c:forEach var="contato" items="${dao.lista}">			
 			<tr>
@@ -65,6 +72,7 @@
 				<!-- <td>${contato.dataNascimento.time}</td> -->
 				<!-- Formatando o dia com JSTL -->
 				<td><fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" /></td>
+				<td><a href="/mvc?logica=RemoveContatoLogic&id=${contato.id}">Remove</a>
 			</tr>	
 		</c:forEach>
 	</table>
@@ -78,7 +86,7 @@
 		<display2:column property="nome" />
 	  	<display2:column property="email" />
 	  	<display2:column property="endereco" />
-	  	<display2:column property="dataNascimento" />
+	  	<display2:column property="dataNascimento" />		
 	</display2:table>
 	<br/><h3>Teste 2</h3><br/>
 	<% request.setAttribute( "lista", dao.getLista() ); %>

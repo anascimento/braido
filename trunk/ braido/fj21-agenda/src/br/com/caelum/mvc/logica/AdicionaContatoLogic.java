@@ -11,24 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.caelum.agenda.dao.ContatoDAO;
 import br.com.caelum.agenda.modelo.Contato;
 
-public class AlteraContatoLogic implements Logica {
+public class AdicionaContatoLogic implements Logica {
 
 	@Override
 	public void executa(HttpServletRequest request, HttpServletResponse response)
-	throws Exception {
-		String paramAltera = request.getParameter("paramAltera");
-		if(paramAltera.equalsIgnoreCase("altera")){
-			this.altera(request, response);
-		}else if(paramAltera.equalsIgnoreCase("popula")){
-			this.popula(request, response);
-		}
-	}
-	
-	public void altera(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		Contato contato = new Contato();
-		long id = Long.parseLong(request.getParameter("id"));
-		contato.setId(id);
 		contato.setNome(request.getParameter("nome"));
 		contato.setEmail(request.getParameter("email"));
 		contato.setEndereco(request.getParameter("endereco"));
@@ -41,20 +29,11 @@ public class AlteraContatoLogic implements Logica {
 		contato.setDataNascimento(dataNascimento);
 		
 		ContatoDAO dao = new ContatoDAO();
-		dao.altera(contato);
+		dao.adiciona(contato);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/lista-contatos-elegante.jsp");
 		rd.forward(request, response);
-		System.out.println("Alterando contato, " + contato.getNome());		
+		System.out.println("Contato adicionado, " + contato.getNome());
 	}
-		
-	public void popula(HttpServletRequest request, HttpServletResponse response)
-	throws Exception {
-		String id = request.getParameter("id");
-		Contato contato = new ContatoDAO().getEspecifico(id);
-		request.setAttribute("contato", contato);
-		RequestDispatcher rd = request.getRequestDispatcher("/testa-altera-mvc.jsp");
-		rd.forward(request, response);
-		System.out.println("Recebido o ID para efetuar a alteração, " + contato.getId());
-	}
+
 }
