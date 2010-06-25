@@ -1,5 +1,7 @@
 package br.com.caelum.mvc.logica;
 
+import java.sql.Connection;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,11 +15,13 @@ public class RemoveContatoLogic implements Logica {
 	public void executa(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		Contato contato = new Contato();
+		Connection connection = (Connection) request.getAttribute("connection");//Faz a conexão através do filtro
+		
 		long id = Long.parseLong(request.getParameter("id"));
 		contato.setId(id);
 		contato.setNome(request.getParameter("nome"));
 		
-		ContatoDAO dao = new ContatoDAO();
+		ContatoDAO dao = new ContatoDAO(connection);
 		dao.remove(contato);
 		RequestDispatcher rd = request.getRequestDispatcher("/lista-contatos-elegante.jsp");
 		rd.forward(request, response);

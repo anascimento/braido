@@ -1,5 +1,6 @@
 package br.com.caelum.mvc.logica;
 
+import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -17,6 +18,8 @@ public class AdicionaContatoLogic implements Logica {
 	public void executa(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		Contato contato = new Contato();
+		Connection connection = (Connection) request.getAttribute("connection");//Faz a conexão através do filtro
+		
 		contato.setNome(request.getParameter("nome"));
 		contato.setEmail(request.getParameter("email"));
 		contato.setEndereco(request.getParameter("endereco"));
@@ -27,8 +30,8 @@ public class AdicionaContatoLogic implements Logica {
 		Calendar dataNascimento = Calendar.getInstance();
 		dataNascimento.setTime(date);
 		contato.setDataNascimento(dataNascimento);
-		
-		ContatoDAO dao = new ContatoDAO();
+				
+		ContatoDAO dao = new ContatoDAO(connection);
 		dao.adiciona(contato);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/lista-contatos-elegante.jsp");

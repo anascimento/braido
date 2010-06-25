@@ -19,10 +19,14 @@ public class ContatoDAO {
 	private Connection connection;
 	private DAOException exception;
 
-	public ContatoDAO() {
+	 public ContatoDAO() {
 		this.connection = new ConnectionFactory().getConnection();
 	}
-
+	 //Utilizando a conexão pelo Filtro
+	public ContatoDAO(Connection connection){
+		this.connection = connection;
+	}
+	
 	public void adiciona(Contato contato) {
 		String sql = "INSERT INTO contatos (nome,email,endereco,dataNascimento) VALUES (?,?,?,?)";
 		try {

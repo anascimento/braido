@@ -1,5 +1,6 @@
 package br.com.caelum.mvc.logica;
 
+import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,6 +28,8 @@ public class AlteraContatoLogic implements Logica {
 	public void altera(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		Contato contato = new Contato();
+		Connection connection = (Connection) request.getAttribute("connection");//Faz a conexão através do filtro
+		
 		long id = Long.parseLong(request.getParameter("id"));
 		contato.setId(id);
 		contato.setNome(request.getParameter("nome"));
@@ -40,7 +43,7 @@ public class AlteraContatoLogic implements Logica {
 		dataNascimento.setTime(date);
 		contato.setDataNascimento(dataNascimento);
 		
-		ContatoDAO dao = new ContatoDAO();
+		ContatoDAO dao = new ContatoDAO(connection);
 		dao.altera(contato);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/lista-contatos-elegante.jsp");
@@ -51,7 +54,9 @@ public class AlteraContatoLogic implements Logica {
 	public void popula(HttpServletRequest request, HttpServletResponse response)
 	throws Exception {
 		String id = request.getParameter("id");
-		Contato contato = new ContatoDAO().getEspecifico(id);
+		Connection connection = (Connection) request.getAttribute("connection");//Faz a conexão através do filtro
+		
+		Contato contato = new ContatoDAO(connection).getEspecifico(id);
 		request.setAttribute("contato", contato);
 		RequestDispatcher rd = request.getRequestDispatcher("/testa-altera-mvc.jsp");
 		rd.forward(request, response);

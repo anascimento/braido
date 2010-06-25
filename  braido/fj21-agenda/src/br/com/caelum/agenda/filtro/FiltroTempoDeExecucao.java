@@ -10,12 +10,14 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 public class FiltroTempoDeExecucao implements Filter {
-
+	
+	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,FilterChain chain) throws IOException, ServletException {
 		long tempoInicial = System.currentTimeMillis();
 		chain.doFilter(request, response);
@@ -23,6 +25,7 @@ public class FiltroTempoDeExecucao implements Filter {
 		System.out.println("Tempo da requisição em milisegundos " + (tempoFinal - tempoInicial));
 	}
 
+	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 		// TODO Auto-generated method stub
 		
