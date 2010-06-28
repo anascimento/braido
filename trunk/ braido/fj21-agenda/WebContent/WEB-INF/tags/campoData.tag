@@ -1,7 +1,7 @@
 <%@ attribute name="id" required="true" %>
 <%@ attribute name="value" required="false" %>
 <script type="text/javascript">
-	$(function() {
+	$(function() {		
 		$("#${id}").datepicker({dateFormat: 'dd/mm/yy'});		
 	});
 </script>
