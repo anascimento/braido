@@ -21,11 +21,10 @@ public class TarefaDAO {
 	}
 	
 	public void adiciona(Tarefa tarefa) {
-		String sql = "INSERT INTO tarefas (descricao, datafinalizacao) VALUES (?,?)";
+		String sql = "INSERT INTO tarefas (descricao) VALUES (?)";
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
 			stmt.setString(1, tarefa.getDescricao());
-			stmt.setDate(2, new Date(tarefa.getDataFinalizacao().getTimeInMillis()));
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -37,7 +36,7 @@ public class TarefaDAO {
 		List<Tarefa> tarefas = new ArrayList<Tarefa>();
 		try {
 			PreparedStatement stmt = this.connection
-					.prepareStatement("SELECT * FROM tarefas");
+					.prepareStatement("SELECT * FROM tarefas ORDER BY id");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -47,9 +46,11 @@ public class TarefaDAO {
 				tarefa.setDescricao(rs.getString("descricao"));
 				tarefa.setFinalizado(rs.getBoolean("finalizado"));				
 
-				Calendar data = Calendar.getInstance();
-				data.setTime(rs.getDate("datafinalizacao"));
-				tarefa.setDataFinalizacao(data);
+				if(rs.getDate("datafinalizacao") != null){
+					Calendar data = Calendar.getInstance();
+					data.setTime(rs.getDate("datafinalizacao"));
+					tarefa.setDataFinalizacao(data);
+				}
 
 				// Adiciona o tarefas a lista
 				tarefas.add(tarefa);
@@ -78,10 +79,10 @@ public class TarefaDAO {
 		}
 	}
 
-	public void remove(Tarefa tarefa) {
+	public void remove(Long id) {
 		try {
 			PreparedStatement stmt = connection.prepareStatement("DELETE FROM tarefas WHERE id=?");
-			stmt.setLong(1, tarefa.getId());
+			stmt.setLong(1, id);
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -114,5 +115,19 @@ public class TarefaDAO {
 			this.exception.getException(e);
 		}
 		return tarefa;
+	}
+	
+	public void finaliza(Long id) {
+		String sql = "UPDATE tarefas SET " + "finalizado = true," 
+					+ "datafinalizacao=? "+ "WHERE id = ?";
+		try {
+			PreparedStatement stmt = this.connection.prepareStatement(sql);						
+			stmt.setDate(1, new Date(Calendar.getInstance().getTimeInMillis()));
+			stmt.setLong(2, id);
+			stmt.execute();
+			stmt.close();
+		} catch (SQLException e) {
+			this.exception.getException(e);
+		}
 	}
 }
