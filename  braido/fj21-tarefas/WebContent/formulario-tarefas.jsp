@@ -7,9 +7,7 @@
 	<form action="adicionaTarefa" method="post">
 	Descrição: <br />
 		<textarea name="tarefa.descricao" rows="5" cols="100"></textarea><br />
-	Data de finalização: <br />	
-		<caelum:campoData id="dataFinalizacao"/>			
-		<input type="submit" value="Adicionar">
+	<input type="submit" value="Adicionar">
 	</form>
 
 <c:import url="rodape.jsp"></c:import>
