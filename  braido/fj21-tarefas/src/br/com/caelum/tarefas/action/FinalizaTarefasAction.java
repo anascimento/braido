@@ -4,17 +4,14 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 
 import br.com.caelum.tarefas.dao.TarefaDAO;
-import br.com.caelum.tarefas.modelo.Tarefa;
 
-public class RemoveTarefaAction {
+public class FinalizaTarefasAction {
 	private Long id;
 
-	@Action(value="removeTarefa", results= {
-			@Result(name="ok", type="redirectAction", params= {"actionName", "listaTarefas"})}
-	)
-	
+	@Action(value = "finalizaTarefa", results = { @Result(name = "ok", type = "httpheader", params = {
+			"status", "200" }) })
 	public String execute() {
-		new TarefaDAO().remove(id);
+		new TarefaDAO().finaliza(id);
 		return "ok";
 	}
 
