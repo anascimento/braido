@@ -1,0 +1,8 @@
+<package name="default" extends="struts">
+	<interceptors>
+		<interceptor name="autorizador" class="br.com.caelum.tarefas.interceptor.AutorizadorInterceptor"></interceptor>
+	</interceptors>
+	<global-results>
+		<result name="naoLogado">/login.jsp</result>
+	</global-results>	
+</package>
