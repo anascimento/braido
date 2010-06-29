@@ -1,17 +1,15 @@
 package br.com.caelum.tarefas.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import br.com.caelum.tarefas.ConnectionFactory;
 import br.com.caelum.tarefas.modelo.Usuario;
-import br.com.caelum.tarefas.modelo.Usuario;
+
 
 public class UsuarioDAO {
 	private Connection connection;
@@ -94,8 +92,9 @@ public class UsuarioDAO {
 		boolean existe = false;
 		try {
 			PreparedStatement stmt = this.connection
-					.prepareStatement("SELECT * FROM usuarios WHERE id=?");
-			stmt.setLong(1, usuario.getId());
+					.prepareStatement("SELECT * FROM usuarios WHERE login=? AND senha=?");
+			stmt.setString(1, usuario.getLogin());
+			stmt.setString(2, usuario.getSenha());
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next())
 				existe = true;

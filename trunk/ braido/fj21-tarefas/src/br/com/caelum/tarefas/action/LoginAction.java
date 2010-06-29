@@ -13,7 +13,9 @@ public class LoginAction {
 
 	@Action(value = "login", results = {
 			@Result(name = "ok", location = "/menu.jsp"),
-			@Result(name = "invalido", location = "/login.jsp") })
+			@Result(name = "invalido", location = "/login.jsp") 
+	})
+			
 	public String login() {
 		if (new UsuarioDAO().existeUsuario(usuario)) {
 			ActionContext.getContext().getSession().put("usuarioLogado", usuario);
