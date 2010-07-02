@@ -3,13 +3,13 @@
 DTD//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-		<property name="hibertane.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-		<property name="hibernate.connection.driver_class" value="org.postgresql.Driver"></property>		
-		<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/fj26"></property>
-		<property name="hibernate.connection.username" value="caelum"></property>
-		<property name="hibernate.connection.password" value="caelum"></property>			
-		<property name="hibernate.show_sql" value="true"></property>
-		<property name="hibernate.show_format_sql" value="true"></property>
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>		
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/fj26</property>
+		<property name="hibernate.connection.username">caelum</property>
+		<property name="hibernate.connection.password">caelum</property>			
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.show_format_sql">true</property>
 		<mapping class="br.com.caelum.fj26.Funcionario"/>
 	</session-factory>
 </hibernate-configuration>
