@@ -9,7 +9,7 @@ import org.hibernate.annotations.Entity;
 public class Funcionario {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue	
 	private Long id;
 	private String nome;
 	private String usuario;
