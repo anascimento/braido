@@ -2,7 +2,14 @@ package br.com.caelum.agenda.modelo;
 
 import java.util.Calendar;
 
-public class Contato {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Contatos {
+	@Id
+	@GeneratedValue
 	private long id;
 	private String nome;
 	private String email;
