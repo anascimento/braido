@@ -14,8 +14,7 @@
 		<property name="hibernate.format_sql">true</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
-		<mapping class="br.com.caelum.SUA_CLASSE_AQUI!!"/>
-		<mapping class="br.com.caelum.SUA_CLASSE_AQUI!!"/>
+		<mapping class="br.com.caelum.hibernate.Produto"/>		
 	
 	</session-factory>
 </hibernate-configuration>
