@@ -1,13 +1,11 @@
 package br.com.caelum.fj26;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Entity;
-
 @Entity
 public class Funcionario {
-
 	@Id
 	@GeneratedValue	
 	private Long id;
@@ -15,6 +13,7 @@ public class Funcionario {
 	private String usuario;
 	private String senha;
 	private String email;
+	
 	public Long getId() {
 		return id;
 	}
