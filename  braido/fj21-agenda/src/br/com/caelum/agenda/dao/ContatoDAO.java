@@ -13,7 +13,7 @@ import java.util.List;
 import org.postgresql.jdbc2.optional.SimpleDataSource;
 
 import br.com.caelum.agenda.ConnectionFactory;
-import br.com.caelum.agenda.modelo.Contato;
+import br.com.caelum.agenda.modelo.Contatos;
 
 public class ContatoDAO {
 	private Connection connection;
@@ -27,7 +27,7 @@ public class ContatoDAO {
 		this.connection = connection;
 	}
 	
-	public void adiciona(Contato contato) {
+	public void adiciona(Contatos contato) {
 		String sql = "INSERT INTO contatos (nome,email,endereco,dataNascimento) VALUES (?,?,?,?)";
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -43,8 +43,8 @@ public class ContatoDAO {
 		}
 	}
 
-	public List<Contato> getLista() {
-		List<Contato> contatos = new ArrayList<Contato>();
+	public List<Contatos> getLista() {
+		List<Contatos> contatos = new ArrayList<Contatos>();
 		try {
 			PreparedStatement stmt = this.connection
 					.prepareStatement("SELECT * FROM contatos");
@@ -52,7 +52,7 @@ public class ContatoDAO {
 
 			while (rs.next()) {
 				// Criando o objeto de Contato
-				Contato contato = new Contato();
+				Contatos contato = new Contatos();
 				contato.setId(rs.getLong("id"));
 				contato.setNome(rs.getString("nome"));
 				contato.setEmail(rs.getString("email"));
@@ -73,7 +73,7 @@ public class ContatoDAO {
 		return contatos;
 	}
 
-	public void altera(Contato contato) {
+	public void altera(Contatos contato) {
 		String sql = "UPDATE contatos SET " + "nome = ?," + "email = ?,"
 				+ "endereco = ?," + "datanascimento = ?" + "WHERE id = ?";
 		try {
@@ -90,7 +90,7 @@ public class ContatoDAO {
 		}
 	}
 
-	public void remove(Contato contato) {
+	public void remove(Contatos contato) {
 		try {
 			PreparedStatement stmt = connection.prepareStatement("delete from contatos where id=?");
 			stmt.setLong(1, contato.getId());
@@ -101,8 +101,8 @@ public class ContatoDAO {
 		}
 	}
 	
-	public Contato getEspecifico(String id){
-		Contato contato = new Contato();
+	public Contatos getEspecifico(String id){
+		Contatos contato = new Contatos();
 		try {
 			PreparedStatement stmt = this.connection
 					.prepareStatement("SELECT * FROM contatos WHERE id=?");
