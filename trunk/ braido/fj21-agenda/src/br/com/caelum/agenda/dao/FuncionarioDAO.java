@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.caelum.agenda.ConnectionFactory;
-import br.com.caelum.agenda.modelo.Funcionario;
+import br.com.caelum.agenda.modelo.Funcionarios;
 
 public class FuncionarioDAO {
 	private Connection connection;
@@ -18,7 +18,7 @@ public class FuncionarioDAO {
 		this.connection = new ConnectionFactory().getConnection();
 	}
 
-	public void adiciona(Funcionario funcionario) {
+	public void adiciona(Funcionarios funcionario) {
 		String sql = "INSERT INTO funcionarios (nome,usuario,senha) VALUES (?,?,?)";
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -32,15 +32,15 @@ public class FuncionarioDAO {
 		}
 	}
 
-	public List<Funcionario> getLista() {
-		List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+	public List<Funcionarios> getLista() {
+		List<Funcionarios> funcionarios = new ArrayList<Funcionarios>();
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM funcionarios");
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
 				// Criando o objeto de Contato
-				Funcionario funcionario = new Funcionario();
+				Funcionarios funcionario = new Funcionarios();
 				funcionario.setId(rs.getLong("id"));
 				funcionario.setNome(rs.getString("nome"));
 				funcionario.setUsuario(rs.getString("usuario"));
@@ -57,7 +57,7 @@ public class FuncionarioDAO {
 		return funcionarios;
 	}
 
-	public void altera(Funcionario funcionario) {
+	public void altera(Funcionarios funcionario) {
 		String sql = "UPDATE funcionarios SET " + "nome = ?," + "usuario = ?, senha = ? WHERE id = ?";
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -72,7 +72,7 @@ public class FuncionarioDAO {
 		}
 	}
 
-	public void remove(Funcionario funcionario) {
+	public void remove(Funcionarios funcionario) {
 		try {
 			PreparedStatement stmt = connection.prepareStatement("delete from funcionarios where id=?");
 			stmt.setLong(1, funcionario.getId());
