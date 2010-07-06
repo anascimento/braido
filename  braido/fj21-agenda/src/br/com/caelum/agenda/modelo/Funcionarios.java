@@ -1,6 +1,13 @@
 package br.com.caelum.agenda.modelo;
 
-public class Funcionario {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Funcionarios {
+	@Id
+	@GeneratedValue
 	private long id;
 	private String nome;
 	private String usuario;
