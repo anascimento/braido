@@ -46,7 +46,7 @@ public class ControllerServlet extends HttpServlet {
 			Logica logica = (Logica) classe.newInstance();
 			logica.executa(request, response);
 		}catch(Exception e){
-			throw new ServletException("A lógica de negocios causou uma exceção!");
+			throw new ServletException("A lógica de negocios causou uma exceção!, erro: " + e.getMessage());
 		}
 	}
 }
