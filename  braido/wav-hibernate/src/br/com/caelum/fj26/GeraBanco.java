@@ -12,10 +12,9 @@ public class GeraBanco {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Configuration configuration = new AnnotationConfiguration();
-		configuration.configure();	
-		SessionFactory sf = configuration.buildSessionFactory();
-		Session s = sf.openSession();		
+		AnnotationConfiguration configuration = new AnnotationConfiguration();
+		configuration.addAnnotatedClass(Funcionario.class);
+		configuration.configure();			
 		SchemaExport se = new SchemaExport(configuration);
 		se.create(true, true);
 
