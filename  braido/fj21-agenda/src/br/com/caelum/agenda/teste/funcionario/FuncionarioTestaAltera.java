@@ -1,7 +1,7 @@
 package br.com.caelum.agenda.teste.funcionario;
 
 import br.com.caelum.agenda.dao.FuncionarioDAO;
-import br.com.caelum.agenda.modelo.Funcionarios;
+import br.com.caelum.agenda.modelo.Funcionario;
 
 public class FuncionarioTestaAltera {
 
@@ -10,7 +10,7 @@ public class FuncionarioTestaAltera {
 	 */
 	public static void main(String[] args) {
 		//Setando os valores a serem salvos
-		Funcionarios funcionario = new Funcionarios();
+		Funcionario funcionario = new Funcionario();
 		funcionario.setId(2);
 		funcionario.setNome("Caelum 2");
 		funcionario.setUsuario("caelum2");

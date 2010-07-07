@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.caelum.agenda.dao.ContatoDAO;
-import br.com.caelum.agenda.modelo.Contatos;
+import br.com.caelum.agenda.modelo.Contato;
 
 /**
  * Servlet implementation class AdicionaContatoServlet
@@ -64,7 +64,7 @@ public class AdicionaContatoServlet extends HttpServlet {
 		}
 		
 		//Monta o bean de contato
-		Contatos contato = new Contatos();
+		Contato contato = new Contato();
 		contato.setNome(nome);
 		contato.setEmail(email);
 		contato.setEndereco(endereco);
