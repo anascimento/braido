@@ -11,9 +11,9 @@
 	<table>
 		<%
 			ContatoDAO dao = new ContatoDAO();
-			List<Contato> contatos = dao.getLista();
+			List<Contatos> contatos = dao.getLista();
 			SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MMMM/yyyy");
-			for(Contato contato : contatos){
+			for(Contatos contato : contatos){
 			%>
 				<tr>
 					<td><%= contato.getNome()%></td>
