@@ -1,7 +1,7 @@
 package br.com.caelum.agenda.teste.funcionario;
 
 import br.com.caelum.agenda.dao.FuncionarioDAO;
-import br.com.caelum.agenda.modelo.Funcionarios;
+import br.com.caelum.agenda.modelo.Funcionario;
 
 public class FuncionarioTestaRemove {
 
@@ -9,7 +9,7 @@ public class FuncionarioTestaRemove {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Funcionarios funcionario = new Funcionarios();
+		Funcionario funcionario = new Funcionario();
 		funcionario.setId(1);
 		FuncionarioDAO dao = new FuncionarioDAO();
 		dao.remove(funcionario);

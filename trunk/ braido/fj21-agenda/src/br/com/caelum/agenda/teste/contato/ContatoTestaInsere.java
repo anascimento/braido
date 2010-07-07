@@ -3,7 +3,7 @@ package br.com.caelum.agenda.teste.contato;
 import java.util.Calendar;
 
 import br.com.caelum.agenda.dao.ContatoDAO;
-import br.com.caelum.agenda.modelo.Contatos;
+import br.com.caelum.agenda.modelo.Contato;
 
 public class ContatoTestaInsere {
 
@@ -13,7 +13,7 @@ public class ContatoTestaInsere {
 	public static void main(String[] args) {
 		
 		//Setando os valores a serem salvos
-		Contatos contato = new Contatos();
+		Contato contato = new Contato();
 		contato.setNome("Caelum 3");
 		contato.setEmail("contato@caelum.com.br");
 		contato.setEndereco("Rua Vergueiro 3185 cj57");

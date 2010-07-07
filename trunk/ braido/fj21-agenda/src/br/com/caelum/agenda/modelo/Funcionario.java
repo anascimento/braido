@@ -1,13 +1,17 @@
 package br.com.caelum.agenda.modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Funcionarios {
+@Table(name="funcionarios")
+public class Funcionario {
 	@Id
 	@GeneratedValue
+	@Column(columnDefinition="serial")
 	private long id;
 	private String nome;
 	private String usuario;

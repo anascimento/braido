@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.caelum.agenda.dao.ContatoDAO;
-import br.com.caelum.agenda.modelo.Contatos;
+import br.com.caelum.agenda.modelo.Contato;
 
 public class AlteraContatoLogic implements Logica {
 
@@ -27,7 +27,7 @@ public class AlteraContatoLogic implements Logica {
 	
 	public void altera(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		Contatos contato = new Contatos();
+		Contato contato = new Contato();
 		Connection connection = (Connection) request.getAttribute("connection");//Faz a conexão através do filtro
 		
 		long id = Long.parseLong(request.getParameter("id"));
@@ -56,7 +56,7 @@ public class AlteraContatoLogic implements Logica {
 		String id = request.getParameter("id");
 		Connection connection = (Connection) request.getAttribute("connection");//Faz a conexão através do filtro
 		
-		Contatos contato = new ContatoDAO(connection).getEspecifico(id);
+		Contato contato = new ContatoDAO(connection).getEspecifico(id);
 		request.setAttribute("contato", contato);
 		RequestDispatcher rd = request.getRequestDispatcher("/testa-altera-mvc.jsp");
 		rd.forward(request, response);

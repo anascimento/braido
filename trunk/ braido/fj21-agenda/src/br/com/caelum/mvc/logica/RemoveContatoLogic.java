@@ -7,14 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.caelum.agenda.dao.ContatoDAO;
-import br.com.caelum.agenda.modelo.Contatos;
+import br.com.caelum.agenda.modelo.Contato;
 
 public class RemoveContatoLogic implements Logica {
 
 	@Override
 	public void executa(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		Contatos contato = new Contatos();
+		Contato contato = new Contato();
 		Connection connection = (Connection) request.getAttribute("connection");//Faz a conexão através do filtro
 		
 		long id = Long.parseLong(request.getParameter("id"));

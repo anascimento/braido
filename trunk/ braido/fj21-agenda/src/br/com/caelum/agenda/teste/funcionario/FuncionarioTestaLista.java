@@ -3,7 +3,7 @@ package br.com.caelum.agenda.teste.funcionario;
 import java.util.List;
 
 import br.com.caelum.agenda.dao.FuncionarioDAO;
-import br.com.caelum.agenda.modelo.Funcionarios;
+import br.com.caelum.agenda.modelo.Funcionario;
 
 public class FuncionarioTestaLista {
 
@@ -12,8 +12,8 @@ public class FuncionarioTestaLista {
 	 */
 	public static void main(String[] args) {
 		FuncionarioDAO dao = new FuncionarioDAO();
-		List<Funcionarios> funcionarios = dao.getLista();
-		for (Funcionarios funcionario : funcionarios) {
+		List<Funcionario> funcionarios = dao.getLista();
+		for (Funcionario funcionario : funcionarios) {
 			System.out.println("Id: " + funcionario.getId());
 			System.out.println("Nome: " + funcionario.getNome());
 			System.out.println("Email: " + funcionario.getUsuario());
