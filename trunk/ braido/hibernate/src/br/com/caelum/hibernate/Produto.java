@@ -2,14 +2,18 @@ package br.com.caelum.hibernate;
 
 import java.util.Calendar;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="produtos")
 public class Produto {
 	@Id
 	@GeneratedValue
+	@Column(columnDefinition="serial")
 	private Long id;
 	
 	private String nome;
