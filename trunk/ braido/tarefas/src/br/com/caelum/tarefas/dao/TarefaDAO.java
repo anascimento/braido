@@ -51,6 +51,7 @@ public class TarefaDAO {
 		try{
 			this.session.save(tarefa);
 			this.session.beginTransaction().commit();
+			System.out.println("ID da tarefa adicionada: " + tarefa.getId());
 		}catch(Exception erro){
 			System.out.println("Houve um erro ao tentar salvar uma tarefa: "+ erro.getMessage());
 			erro.printStackTrace();
