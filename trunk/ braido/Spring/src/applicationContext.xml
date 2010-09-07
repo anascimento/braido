@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="computadorBean" class="bean.Computador">
+		<property name="impressora" ref="impressoraBean" />
+		<property name="teclado" ref="tecladoBean" />
+		<property name="monitor" ref="monitorBean" />
+	</bean>
+	<bean id="impressoraBean" class="bean.Impressora" />
+	<bean id="tecladoBean" class="bean.Teclado" />
+	<bean id="monitorBean" class="bean.Monitor" />
+</beans>
