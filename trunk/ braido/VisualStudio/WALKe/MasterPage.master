@@ -1,0 +1,84 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Evolutiva Tenoclogia</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="topbar">
+    	+55 35 3714-6231  |  <a href="mailto:contato@evolutivatecnologia.com.br"> contato@evolutivatecnologia.com.br</a>
+    </div>
+    <div id="header">
+    	<a href="default.aspx">
+    	    <div id="logo">        	
+            </div>
+        </a>
+        <ul id="navigation">
+            <li><span><a href="#">Pricipal</a></span></li>
+            <li><a href="#">Soluções</a></li>
+            <li><a href="#">Clientes</a></li>
+            <li><a href="#">Canal</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </div>
+    <div id="body">
+        <form id="form1" runat="server">
+    	    <div id="leftmenu">
+                <div id="quotestart"></div>
+                    <p>This is an example of a customer testimonial. Place good reviews or something else here. It will look good :)<br /><br /></p>
+                <div class="right">
+                    Gill Bates<br />
+                    CEO &amp; Founder<br />
+			        randomsite.com
+                </div><br clear="all" />
+                <div id="quoteend"></div><br clear="all" />
+                <div class="seperator"></div>
+                <div class="form">
+        	        <h3>Quick contact</h3>
+                    This form is not coded, you will need to most likely configure a serverside script to make this emailer work! 
+                    <br /><br />
+                    <label for="form_name">Name</label>
+                    <input type="text" name="name" id="form_name" value="John Smith" /> 
+                    
+                    <label for="form_email">Contact Method</label>
+                    <input type="text" name="email" id="form_email" value="hello@aim.com" />      
+                    
+                    <label for="form_comments">Message</label> 
+                    <textarea id="form_comments" rows="4" cols="22">I would like to request your services</textarea>
+                    
+                    <button value="Submit" class="send_button" onclick="this.form.submit();">SUBMIT</button>
+                    <br clear="all" />
+                </div>
+            </div>
+            <div id="content">
+                               
+	            <h2>Ultimas Notícias</h2>
+                     <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                     </asp:contentplaceholder>
+                    <p>Alguns Exemplos...</p>
+	            <h2>Exemplo 2</h2>
+                    <p> Exemplo 3, teste teste teste teste teste teste teste teste teste teste</p>
+                    
+
+                    <h2>Exemplo 3</h2> 
+                    <p>Exemplo 3, teste teste teste teste teste teste teste teste teste teste 
+                    </p>
+            </div>
+        </form>
+        <div class="clear"></div>
+        <div id="footer">
+            <span><a href="#">Principal</a></span> | 
+            <a href="#">Soluções</a> | 
+            <a href="#">Clientes</a> | 
+            <a href="#">Canal</a> | 
+            <a href="#">Contato</a>
+	    	<p>	Copyright &copy; 2010 Evolutiva Tecnologia | +55 35 3714-6231  |  <a href="mailto:contato@evolutivatecnologia.com.br"> contato@evolutivatecnologia.com.br</a></p>
+	    </div>
+    </div>
+</div>
+</body>
+</html>
