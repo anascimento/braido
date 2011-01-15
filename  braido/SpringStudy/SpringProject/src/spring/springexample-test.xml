@@ -13,18 +13,10 @@
 		</property>
 	</bean>
 	<bean id="e-mail" class="springexample.email.Email">
-		<property name="smtpHost">
-			<value>localhost</value>
-		</property>
-		<property name="fromEmail">
-			<value>admin@br.ibm.com.com</value>
-		</property>
-		<property name="userId">
-			<value>myuserid</value>
-		</property>
-		<property name="password">
-			<value>mypassword</value>
-		</property>
+		<property name="smtpHost" value="localhost" />
+		<property name="fromEmail" value="admin@br.ibm.com.com"/>
+		<property name="userId" value="userId"/>
+		<property name="password" value="password"/>
 	</bean>
 	<bean id="sms" class="springexample.sms.SMS">
 		<property name="cellNumber">
