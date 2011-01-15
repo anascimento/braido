@@ -23,6 +23,9 @@ public class ServiceIntegration implements ServiceIntegrationInterface {
 		if(getEmailInterface() != null){
 			getEmailInterface().sendEmail();
 			System.out.println("Email sent to: "+getEmailInterface().getFromEmail());
+			System.out.println("Email userId: "+getEmailInterface().getUserId());
+			System.out.println("Email password: "+getEmailInterface().getPassword());
+			System.out.println("Email smtpHost: "+getEmailInterface().getSmtpHost());
 		}
 		if(getSmsInterface() != null){
 			getSmsInterface().sendSMS();
