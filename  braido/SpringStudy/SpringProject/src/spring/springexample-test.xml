@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="service" class="springexample.service.ServiceIntegration">
+		<property name="emailInterface">
+			<ref bean="e-mail"/>
+		</property>
+		<property name="smsInterface">
+			<ref bean="sms"/>
+		</property>
+	</bean>
+	<bean id="e-mail" class="springexample.email.Email">
+		<property name="smtpHost">
+			<value>localhost</value>
+		</property>
+		<property name="fromEmail">
+			<value>admin@br.ibm.com.com</value>
+		</property>
+		<property name="userId">
+			<value>myuserid</value>
+		</property>
+		<property name="password">
+			<value>mypassword</value>
+		</property>
+	</bean>
+	<bean id="sms" class="springexample.sms.SMS">
+		<property name="cellNumber">
+			<value>8645378290134</value>
+		</property>
+	</bean>
+</beans>
