@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="myBeanName" class="beanNameAware.src.BeanName"/>
+	<bean id="myBeanLoader" class="beanNameAware.src.BeanLoader"/>
+	<bean id="myBeanFactory" class="beanNameAware.src.BeanWithFactoryAware"/>
+</beans>
