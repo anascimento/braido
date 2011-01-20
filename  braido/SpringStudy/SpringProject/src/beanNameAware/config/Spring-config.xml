@@ -3,4 +3,11 @@
 	<bean id="myBeanName" class="beanNameAware.src.BeanName"/>
 	<bean id="myBeanLoader" class="beanNameAware.src.BeanLoader"/>
 	<bean id="myBeanFactory" class="beanNameAware.src.BeanWithFactoryAware"/>
+	<bean id="myEmployeeBean" class="beanNameAware.src.EmployeeBean">
+		<property name="name" value="myName"/>
+		<property name="age" value="28"/>
+	</bean>
+	<bean id="customInitMethodBean" class="beanNameAware.src.CustomBean" init-method="customInitMethod"/>
+	<bean id="customDestroyMethodBean" class="beanNameAware.src.CustomBean" init-method="customDestroyMethod"/>	
+	<bean id="databaseRow" class="beanNameAware.src.DatabaseRowBean"/>
 </beans>
