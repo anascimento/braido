@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Contato {
 	@Id
 	@GeneratedValue
-	@Column(columnDefinition="serial")
+	//@Column(columnDefinition="serial")
 	private long id;
 	private String nome;
 	private String email;
