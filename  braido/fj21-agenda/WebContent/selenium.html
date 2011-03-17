@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://sao07.stefanini.com.br/" />
+<title>New Test</title>
+<script type="text/javascript">
+	function dateToday(){	
+		var today = new Date();
+		//alert(today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getYear());
+		var date = today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getYear();
+		//alert(date);
+		document.write(date);
+	}
+
+</script>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/dashhoras/default.aspx</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>txtLgn</td>
+	<td>BBRAIDO</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>txtPwd</td>
+	<td>stefanini@10</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>cmdLgn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dsData</td>
+	<td>
+		<script type="text/javascript">
+			dateToday();
+		</script>
+	</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>cboAtividade</td>
+	<td>label=Desenvolvimento &gt; Controle de Atividades</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>cboAtividade</td>
+	<td>label=Desenvolvimento &gt; Controle de Atividades</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dsHrInicio</td>
+	<td>07:00</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dsDuracao</td>
+	<td>12:30</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>cmdIncluir</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dsData</td>
+	<td>
+		<script type="text/javascript">
+			dateToday();
+		</script>
+	</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>cboAtividade</td>
+	<td>label=Desenvolvimento &gt; Controle de Atividades</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dsHrInicio</td>
+	<td>13:30</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>dsDuracao</td>
+	<td>16:30</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>cmdIncluir</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>hlSair</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
