@@ -9,7 +9,7 @@
 </head>
 <body>
 <f:view>
-	Olá <h:outputText value="#{meuBean.nome}"></h:outputText>
+	Olá <h:outputText value="#{MeuBean.nome}"></h:outputText>
 </f:view>
 </body>
 </html>
