@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13025385753250" configfile="/jsf/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="trabComJSF" x="156" y="144" id="pf13025403184041" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf13025403184042 pf13025403519044" inlinks="pf13025403519044" path="/trabComJSF.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="boasVindas" x="372" y="144" id="pf13025403184043" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13025403184042" path="/boasVindas.jsp"/>
+  <links id="pf13025403184042" target="pf13025403184043" source="pf13025403184041" outcome="sucesso"/>
+  <links id="pf13025403519044" target="pf13025403184041" source="pf13025403184041" outcome="falha">
+    <bendPoints d1Width="1" d1Height="-68" d2Width="1" d2Height="-68"/>
+    <bendPoints d1Width="-84" d1Height="-31" d2Width="-84" d2Height="-31"/>
+  </links>
+</pageflow:Pageflow>
