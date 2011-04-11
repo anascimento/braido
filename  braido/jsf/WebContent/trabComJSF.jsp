@@ -11,8 +11,8 @@
 <f:view>
 	<h:form id="formulario">
 		Digite seu nome:
-		<h:inputText id="nome" value="#{meuBean.nome}" required="true"></h:inputText>
-		<h:commandButton action="#{meuBean.acao}" value="Enviar" id="submit"></h:commandButton>
+		<h:inputText id="nome" value="#{MeuBean.nome}" required="true"></h:inputText>
+		<h:commandButton action="#{MeuBean.acao}" value="Enviar" id="submit"></h:commandButton>
 		</br>
 		<h:messages style="color: red"></h:messages>
 	</h:form>

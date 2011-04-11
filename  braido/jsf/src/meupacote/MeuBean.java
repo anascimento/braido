@@ -5,6 +5,7 @@ import javax.faces.context.FacesContext;
 
 public class MeuBean {
 	private String nome = null;
+	private String email = null;
 
 	public String getNome() {
 		return nome;
@@ -13,7 +14,15 @@ public class MeuBean {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+		
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String acao(){
 		boolean sucesso = true;
 		FacesContext context = FacesContext.getCurrentInstance();
