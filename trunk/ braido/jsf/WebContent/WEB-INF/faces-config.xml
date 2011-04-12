@@ -7,7 +7,7 @@
     version="1.2">
 	
 	<application>		
-		<message-bundle>meupacote.rotulos</message-bundle>
+		<message-bundle>meupacote.rotulos</message-bundle>		
 		<locale-config>
 			<default-locale>pt</default-locale>
 			<supported-locale>en</supported-locale>
