@@ -19,17 +19,12 @@
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSF 1.2 (Mojarra JSF API Implementation 1.2_14-b01-FCS)">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
-			<attribute name="owner.project.facets" value="jst.jsf"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSTL">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSF"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
