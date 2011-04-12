@@ -6,13 +6,15 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
     version="1.2">
 	
-	<application>		
-		<message-bundle>meupacote.rotulos</message-bundle>		
+	<application>						
 		<locale-config>
 			<default-locale>pt</default-locale>
 			<supported-locale>en</supported-locale>
-		</locale-config>			
-	</application>
+		</locale-config>
+		<message-bundle>
+			meupacote.messageResources.Messages
+		</message-bundle>			
+	</application>	
 	
 	<managed-bean>
 		<managed-bean-name>MeuBean</managed-bean-name>
