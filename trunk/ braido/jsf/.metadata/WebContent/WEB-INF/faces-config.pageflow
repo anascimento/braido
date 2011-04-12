@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13025385753250" configfile="/jsf/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="trabComJSF" id="pf13025492867940" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf13025492867941 pf13025492867942" inlinks="pf13025492867942" path="/trabComJSF.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="boasVindas" id="pf13025492867943" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13025492867941" path="/boasVindas.jsp"/>
-  <links id="pf13025492867941" target="pf13025492867943" source="pf13025492867940" outcome="sucesso"/>
-  <links id="pf13025492867942" target="pf13025492867940" source="pf13025492867940" outcome="falha"/>
+  <nodes xsi:type="pageflow:PFPage" name="trabComJSF" id="pf13025699708414" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" outlinks="pf13025699708415 pf13025699708416" inlinks="pf13025699708416" path="/trabComJSF.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="boasVindas" id="pf13025699708417" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13025699708415" path="/boasVindas.jsp"/>
+  <links id="pf13025699708415" target="pf13025699708417" source="pf13025699708414" outcome="sucesso"/>
+  <links id="pf13025699708416" target="pf13025699708414" source="pf13025699708414" outcome="falha"/>
 </pageflow:Pageflow>
